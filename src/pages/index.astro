@@ -1,0 +1,27 @@
+---
+import '@/styles/globals.css';
+import Layout from '../layouts/Layout.astro';
+import { TodoList } from '@/components/todos/TodoList';
+import { Toaster } from '@/components/ui/toaster';
+---
+
+<Layout title="Advanced Todo App">
+  <main class="min-h-screen bg-[#1C1C1C] text-white">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#1C1C1C_0%,#1C1C1C_50%,rgba(28,28,28,0)_100%)] z-0"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(121,40,202,0.15),rgba(121,40,202,0)_50%)] z-0"></div>
+    <div class="container relative z-10 mx-auto py-12 px-4">
+      <div class="flex flex-col items-center justify-center mb-12">
+        <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-4">
+          Advanced Todo
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl text-center">
+          A beautiful and powerful todo app with local storage persistence
+        </p>
+      </div>
+      <div class="mt-8">
+        <TodoList client:load />
+      </div>
+    </div>
+    <Toaster client:load />
+  </main>
+</Layout>
